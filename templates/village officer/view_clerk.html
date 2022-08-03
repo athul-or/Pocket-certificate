@@ -1,0 +1,47 @@
+{% extends "village officer/index.html" %}
+{% block body %}
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="991" border="1" class="table table-head-bg-primary table-hover">
+    <tr>
+      <td width="25">#</td>
+      <td width="87">Name</td>
+      <td width="121">Address</td>
+      <td width="61">District</td>
+      <td width="96">Image</td>
+      <td width="103">Qualification</td>
+      <td width="87">Phone no.</td>
+      <td width="83">Joining date</td>
+      <td width="94">End Date</td>
+
+    </tr>
+
+      {% for i in data %}
+
+    <tr>
+      <td height="145">&nbsp;{{ loop.index }}</td>
+      <td>&nbsp;{{ i['c_name'] }}</td>
+      <td>&nbsp;{{ i['c_place'] }},{{ i['c_pin'] }},{{ i['c_post'] }}</td>
+      <td>&nbsp;{{ i['c_district'] }}</td>
+      <td><img src="{{ i['c_image'] }}" alt="nophoto" height="100" width="100"/></td>
+      <td>&nbsp;{{ i['c_qualification'] }}</td>
+      <td>&nbsp;{{ i['c_phone'] }}</td>
+      <td>&nbsp;{{ i['cjoining_date'] }}</td>
+      <td>&nbsp;{{ i['cending_date'] }}</td>
+
+    </tr>
+            {% endfor %}
+  </table>
+</form></body>
+</html>
+
+{% endblock %}

@@ -1,0 +1,62 @@
+{% extends "village officer/index.html" %}
+{% block body %}
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form action="" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <table width="267" border="1" class="table table-head-bg-primary table-hover">
+      <tr align="center">
+      <td colspan="2"><img src="{{ data['v_image'] }}" height="100" width="100"/></td>
+    </tr>
+    <tr>
+      <td>Name</td>
+      <td>{{ data['v_name']}}</td>
+    </tr>
+    <tr>
+      <td>Place</td>
+      <td>{{ data['v_place']}}</td>
+    </tr>
+    <tr>
+      <td>District</td>
+      <td>{{ data['v_district']}}</td>
+    </tr>
+    <tr>
+      <td>PIN</td>
+      <td>{{ data['v_pin']}}</td>
+    </tr>
+    <tr>
+      <td>Post</td>
+      <td>{{ data['v_post']}}</td>
+    </tr>
+
+    <tr>
+      <td>Qualification</td>
+      <td>{{ data['v_qualification']}}</td>
+    </tr>
+    <tr>
+      <td>Phone no.</td>
+      <td>{{ data['v_phone']}}</td>
+    </tr>
+    <tr>
+      <td>Joining date</td>
+      <td>{{ data['joining_date']}}</td>
+    </tr>
+    <tr>
+      <td>End date</td>
+      <td>{{ data['end_date']}}</td>
+    </tr>
+  </table>
+
+</form>
+</body>
+</html>
+
+{% endblock %}

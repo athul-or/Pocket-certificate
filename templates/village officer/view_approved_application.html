@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="591" height="136" border="1">
+    <tr>
+      <td width="55">#</td>
+      <td width="149">Certificate Name</td>
+      <td width="131">Department</td>
+      <td width="96"> User</td>
+      <td width="126">Upload File</td>
+    </tr>
+      {% for i in data %}
+
+
+    <tr>
+      <td height="52">&nbsp;</td>
+      <td>&nbsp;{{ loop.index }}</td>
+      <td>&nbsp;{{ i['c_name'] }}</td>
+      <td>&nbsp;{{ i['c_place'] }}</td>
+      <td>&nbsp;</td>
+    </tr>
+
+      {% endfor %}
+  </table>
+</form>
+</body>
+</html>

@@ -1,0 +1,75 @@
+{% extends "user/index.html" %}
+{% block body %}
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form action="" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <table width="267" border="1" class="table table-head-bg-primary table-hover">
+      <tr align="center">
+      <td colspan="2"><img src="{{ data['image'] }}" height="110" width="110"/><h1>{{ data['u_name'] }}</h1> </td>
+    </tr><tr>
+      <td>DOB</td>
+      <td>{{ data['dob'] }}</td>
+    </tr>
+    <tr>
+      <td>House Name</td>
+      <td>{{ data['housename'] }}</td>
+    </tr>
+    <tr>
+      <td>District</td>
+      <td>{{ data['district'] }}</td>
+    </tr>
+    <tr>
+      <td>PIN</td>
+      <td>{{ data['pin'] }}</td>
+    </tr>
+    <tr>
+      <td>Post</td>
+      <td>{{ data['post'] }}</td>
+    </tr>
+
+    <tr>
+      <td>E-mail</td>
+      <td>{{ data['email'] }}</td>
+    </tr>
+    <tr>
+      <td>Phone no.</td>
+      <td>{{ data['phoneno'] }}</td>
+    </tr>
+    <tr>
+      <td>Village</td>
+      <td>{{ data['village'] }}</td>
+    </tr>
+    <tr>
+      <td height="26">Taluk</td>
+      <td>{{ data['taluk'] }}</td>
+    </tr>
+    <tr>
+      <td>Local Body</td>
+      <td>{{ data['name_of_local_body'] }}</td>
+    </tr>
+    <tr>
+      <td>Father</td>
+      <td>{{ data['father_name'] }}</td>
+    </tr>
+    <tr>
+      <td>Mother</td>
+      <td>{{ data['mother_name'] }}</td>
+    </tr>
+      <tr align="center">
+          <td colspan="2"><a href="/edit_profile/{{ data['user_id'] }}" class="btn btn-outline-primary">Edit</a></td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>
+
+{% endblock %}

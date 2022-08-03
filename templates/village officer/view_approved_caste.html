@@ -1,0 +1,39 @@
+{% extends "village officer/index.html" %}
+{% block body %}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="/approved_caste_application">
+  <table width="200" border="1" class="table table-head-bg-primary table-hover">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">USER DETAILS</th>
+        <th scope="col">ADDRESS</th>
+      <th scope="col">RELIGION</th>
+      <th scope="col">CASTE</th>
+      <th scope="col">CATEGORY</th>
+        <th scope="col">STATUS</th>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>{{ loop.index }}&nbsp;</td>
+      <td>Name: {{ i['u_name'] }}<br>Phone: {{ i['phoneno'] }}<br>Email: {{ i['email'] }}</td>
+      <td>&nbsp;House Name: {{ i['housename'] }}<br>Place: {{ i['place'] }}<br>Post: {{ i['post'] }}<br>Pin: {{ i['pin'] }}</td>
+      <td>&nbsp;&nbsp;{{ i['crelegion'] }}</td>
+        <td>&nbsp;{{ i['ccaste'] }}</td>
+          <td>&nbsp;{{ i['category'] }}</td>
+     <td>&nbsp;{{ i['status'] }}</td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+</html>
+
+{% endblock %}

@@ -1,0 +1,76 @@
+{% extends "admin/index.html" %}
+{% block body %}
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form action="" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <table width="267" border="1" class="table table-head-bg-primary table-hover">
+    <tr>
+      <td>Name</td>
+      <td><label for="textfield2"></label>
+      <input type="text" name="textfield" id="textfield2" value="{{ data['v_name'] }}" class="form-control"/></td>
+    </tr>
+    <tr>
+      <td>Place</td>
+      <td><label for="textfield"></label>
+        <label for="textfield11"></label>
+      <input type="text" name="textfield10" id="textfield11" value="{{ data['v_place']}}" class="form-control"/></td>
+    </tr>
+    <tr>
+      <td>District</td>
+      <td><label for="textfield10"></label>
+      <input type="text" name="textfield9" id="textfield10" value="{{ data['v_district']}}" class="form-control" /></td>
+    </tr>
+    <tr>
+      <td>PIN</td>
+      <td><label for="textfield3"></label>
+      <input type="text" pattern="[0-9]{6}" name="textfield2" id="textfield3" value="{{ data['v_pin']}}" class="form-control"/></td>
+    </tr>
+    <tr>
+      <td>Post</td>
+      <td><label for="textfield9"></label>
+      <input type="text" name="textfield8" id="textfield9" value="{{ data['v_post']}}" class="form-control" /></td>
+    </tr>
+    <tr>
+      <td>Image</td>
+      <td><label for="fileField"></label>
+          <img src="{{ data['v_image'] }} " height="100" width="100"/>
+      <input type="file" name="fileField" id="fileField" class="form-control"/></td>
+    </tr>
+    <tr>
+      <td>Qualification</td>
+      <td><label for="textfield8"></label>
+      <input type="text" name="textfield7" id="textfield8" value="{{ data['v_qualification']}}" class="form-control"/></td>
+    </tr>
+    <tr>
+      <td>Phone no.</td>
+      <td><label for="textfield4"></label>
+      <input type="text" pattern="[0-9]{10}" name="textfield3" id="textfield4"  value="{{ data['v_phone']}}" class="form-control" /></td>
+    </tr>
+    <tr>
+      <td>Joining date</td>
+      <td><label for="textfield5"></label>
+      <input type="date" name="textfield4" id="textfield5"  value="{{ data['joining_date']}}" class="form-control"/></td>
+    </tr>
+    <tr>
+      <td>End date</td>
+      <td><label for="textfield6"></label>
+      <input type="date" name="textfield5" id="textfield6"  value="{{ data['end_date']}}" class="form-control"/></td>
+    </tr>
+    <tr align="center">
+      <td colspan="2"> <input type="submit" name="button" id="button" value="Update" class="btn btn-outline-primary" /></td>
+    </tr>
+  </table>
+  <label for="textfield7"></label>
+</form>
+</body>
+</html>
+
+{% endblock %}

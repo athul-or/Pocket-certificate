@@ -1,0 +1,43 @@
+{% extends "user/index.html" %}
+{% block body %}
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="691" border="1" class="table table-head-bg-primary table-hover">
+    <tr>
+      <th width="12" scope="col">#</th>
+      <th width="160" scope="col">HUSBAND NAME</th>
+      <th width="131" scope="col">WIFE NAME</th>
+      <th width="83" scope="col">DATE</th>
+      <th width="124" scope="col">LOCATION</th>
+      <th width="141" scope="col">&nbsp;STATUS</th>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>{{ loop.index }}</td>
+      <td>{{i['hn'] }}
+      <td>{{ i['wn'] }}
+      <td>{{ i['marriage_date'] }}&nbsp;</td>
+      <td>{{ i['mlocation'] }}&nbsp;</td>
+    <td>
+        {% if i['status']=='Approved' %}
+          <a href="/marriagecertificate/{{ i['mcid'] }}">View Certificate</a>
+          {% else %}
+            {{ i['status'] }}</td>
+    {% endif %}
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends "clerk/index.html" %}
+{% block body %}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="200" border="1" class="table table-head-bg-primary table-hover">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">USER DETAILS</th>
+      <th scope="col">FATHER'S DETAILS</th>
+      <th scope="col"><p>MOTHER'S DETAILS</p></th>
+      <th scope="col">&nbsp;STATUS</th>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>{{ loop.index }}&nbsp;</td>
+      <td><b>Name:</b>{{ i['u_name'] }}<br><b>Phone:</b>{{ i['phoneno'] }}<br><b>Email:</b>{{ i['email'] }}
+          <br>
+          <br>
+      <b> Address: </b>{{ i['housename'] }},<br> {{ i['place'] }},<br>{{ i['post'] }},<br>{{ i['pin'] }}</td>
+      <td><b>Name: </b>{{ i['father_name'] }}<br><b>District: </b>{{ i['f_district'] }}<br><b>Thaluk: </b>{{ i['f_taluk'] }}<br><b>Village:</b>{{ i['f_village'] }}&nbsp;</td>
+      <td><b>Name: </b>{{ i['mother_name'] }}<br><b>District: </b>{{ i['m_district'] }}<br><b>Thaluk: </b> {{ i['m_taluk'] }}<br><b>Village:</b>{{ i['m_village'] }}&nbsp;</td>
+    <td>&nbsp;{{ i['status'] }}</td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+</html>
+
+{% endblock %}

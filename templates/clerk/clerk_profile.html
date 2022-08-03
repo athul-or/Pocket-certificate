@@ -1,0 +1,76 @@
+{% extends "clerk/index.html" %}
+{% block body %}
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form action="" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <table width="267" border="1" class="table table-head-bg-primary table-hover">
+      <tr align="center">
+      <td colspan="2"><img src="{{ data['c_image'] }}" height="110" width="110"/><h1>{{ data['c_name'] }}</h1> </td>
+    </tr>
+{#      <tr>#}
+{#      <td>DOB</td>#}
+{#      <td>{{ data['dob'] }}</td>#}
+{#    </tr>#}
+    <tr>
+      <td>Place</td>
+      <td>{{ data['c_place'] }}</td>
+    </tr>
+    <tr>
+      <td>District</td>
+      <td>{{ data['c_district'] }}</td>
+    </tr>
+    <tr>
+      <td>PIN</td>
+      <td>{{ data['c_pin'] }}</td>
+    </tr>
+    <tr>
+      <td>Post</td>
+      <td>{{ data['c_post'] }}</td>
+    </tr>
+
+    <tr>
+      <td>E-mail</td>
+      <td>{{ data['c_email'] }}</td>
+    </tr>
+    <tr>
+      <td>Phone no.</td>
+      <td>{{ data['c_phone'] }}</td>
+    </tr>
+    <tr>
+      <td>Qualification</td>
+      <td>{{ data['c_qualification'] }}</td>
+    </tr>
+{#    <tr>#}
+{#      <td height="26">Taluk</td>#}
+{#      <td>{{ data['taluk'] }}</td>#}
+{#    </tr>#}
+{#    <tr>#}
+      <td>Joining Date</td>
+      <td>{{ data['cjoining_date'] }}</td>
+    </tr>
+    <tr>
+      <td>Ending Date</td>
+      <td>{{ data['cending_date'] }}</td>
+    </tr>
+{#    <tr>#}
+{#      <td>Mother</td>#}
+{#      <td>{{ data['cending_date'] }}</td>#}
+{#    </tr>#}
+{#      <tr align="center">#}
+{#          <td colspan="2"><a href="/edit_profile/{{ data['user_id'] }}" class="btn btn-outline-primary">Edit</a></td>#}
+{#    </tr>#}
+  </table>
+</form>
+</body>
+</html>
+
+{% endblock %}

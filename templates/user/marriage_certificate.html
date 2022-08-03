@@ -1,0 +1,59 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+
+
+
+{#    <style>#}
+{#div {#}
+{#  background-image: url('/static/qq.png');#}
+{#}#}
+{#</style>#}
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+    <div>
+<table height="550" align="center" style="background-image: url('/static/emblem1.png')">
+    <tr>
+      <th width="121" height="100" rowspan="2" scope="row">No:  {{ n }}</th>
+      <th width="563" rowspan="2">&nbsp;&nbsp;</th>
+      <th height="31" >Date: {{ d2 }}</th>
+    </tr>
+    <tr>
+     <th  width="190" height="62">Place: {{ a['wp'] }}</th>
+    </tr>
+    <tr>
+      <th height="100" colspan="3" scope="row"><H2>MARRIAGE CERTIFICATE</H2></th>
+    </tr>
+    <tr>
+      <th height="48" colspan="3" scope="row">This Certifies that</th>
+    </tr>
+    <tr>
+      <th colspan="3" scope="row">     {{ a['hn'] }}    and     {{ a['wn'] }}   </th>
+    </tr>
+    <tr>
+      <th height="27" colspan="3" scope="row">were united in marriage</th>
+    </tr>
+    <tr>
+      <th height="34" colspan="3" scope="row">on {{ a['marriage_date'] }}</th>
+    </tr>
+    <tr>
+      <th height="34" colspan="3" scope="row">at {{ a['mlocation'] }}</th>
+    </tr>
+    <tr>
+      <th height="34" colspan="3" scope="row">in the presence of the presences:</th>
+    </tr>
+    <tr>
+      <th height="34" colspan="3" scope="row">{{ a['hf'] }}   &   {{ a['hm'] }}</th>
+    </tr>
+    <tr>
+      <th height="34" colspan="3" scope="row">&nbsp;</th>
+    </tr>
+  </table>
+        </div>
+</form>
+</body>
+</html>

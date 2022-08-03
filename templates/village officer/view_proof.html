@@ -1,0 +1,34 @@
+{% extends "village officer/index.html" %}
+{% block body %}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="get" action="">
+  <table width="348" border="1" class="table table-head-bg-primary table-hover">
+    <tr>
+      <td width="10">#</td>
+      <td width="98">Proof Name</td>
+      <td width="51">Certificate </td>
+      <td width="51"> </td>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>&nbsp;{{ loop.index }}</td>
+      <td>{{ i['proof']}}</td>
+      <td><img src="{{ i['certificate']}}" height="200" width="200" ></td>
+     <td><a href="/clerk_download_proof/{{ i['certificate_id'] }}" class="btn btn-outline-info btn-sm">Download certificate</a> </td>
+
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+</html>
+
+{% endblock %}

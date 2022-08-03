@@ -1,0 +1,34 @@
+{% extends "admin/index.html" %}
+{% block body %}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="200" border="1" class="table table-head-bg-primary table-hover">
+    <tr>
+      <td>#</td>
+      <td>Username</td>
+      <td>Complaint</td>
+      <td>Date</td>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>{{ loop.index }}</td>
+      <td>{{ i['u_name'] }}&nbsp;</td>
+      <td>{{ i['complaint'] }}&nbsp;</td>
+      <td>&nbsp;{{ i['c_date'] }}</td>
+
+        <td><a href="/complaint_reply/{{ i['complaint_id'] }}" class="btn btn-outline-success btn-sm">Reply</a></td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+</html>
+ {% endblock %}

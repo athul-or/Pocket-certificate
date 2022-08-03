@@ -1,0 +1,97 @@
+{% extends "admin/index.html" %}
+{% block body %}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form action="/upclrk1/{{ id }}" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <table width="267" border="1" class="table table-head-bg-primary table-hover">
+    <tr>
+      <td>Name</td>
+      <td><label for="textfield2"></label>
+      <input type="text" name="textfield" id="textfield2"  value="{{ loop1['c_name']}}" class="form-control"/></td>
+    </tr>
+    <tr>
+      <td height="44">Place</td>
+      <td><label for="textfield"></label>
+        <label for="textfield11"></label>
+      <input type="text" name="textfield10" id="textfield11"  value="{{ loop1['c_place']}}" class="form-control" /></td>
+    </tr>
+    <tr>
+      <td>District</td>
+      <td><label for="textfield10"> </label>
+        <label for="select"></label>
+        <select name="select" id="select"  >
+          <option value="KASARAGOD" {% if loop1['c_district']== 'KASARAGOD'%} selected {% endif %}>KASARAGOD</option>
+          <option value="KANNUR" {% if loop1['c_district']== 'KANNUR'%} selected {% endif %}>KANNUR</option>
+          <option  value="KOZHIKODE" {% if loop1['c_district']== 'KOZHIKODE'%} selected {% endif %}>KOZHIKODE</option>
+          <option value="WAYANAD" {% if loop1['c_district']== 'WAYANAD'%} selected {% endif %}>WAYANAD</option>
+          <option value="MALAPPURAM" {% if loop1['c_district']== 'MALAPPURAM'%} selected {% endif %}>MALAPPURAM</option>
+          <option value="THRISSUR" {% if loop1['c_district']== 'THRISSUR'%} selected {% endif %}>THRISSUR</option>
+          <option value="PALAKKAD" {% if loop1['c_district']== 'PALAKKAD'%} selected {% endif %}>PALAKKAD</option>
+          <option value="ERANAKULAM" {% if loop1['c_district']== 'ERANAKULAM'%} selected {% endif %}>ERANAKULAM</option>
+          <option  value="ALAPPUZHA" {% if loop1['c_district']== 'ALAPPUZHA'%} selected {% endif %}>ALAPPUZHA</option>
+          <option  value="IDUKKI" {% if loop1['c_district']== 'IDUKKI'%} selected {% endif %}>IDUKKI</option>
+          <option value="PATHANAMTHITTA" {% if loop1['c_district']== 'PATHANAMTHITTA'%} selected {% endif %}>PATHANAMTHITTA</option>
+          <option  value="KOTTAYAM" {% if loop1['c_district']== 'KOTTAYAM'%} selected {% endif %}>KOTTAYAM</option>
+          <option value="KOLLAM" {% if loop1['c_district']== 'KOLLAM'%} selected {% endif %}>KOLLAM</option>
+          <option value="TRIVANDRUM" {% if loop1['c_district']== 'TRIVANDRUM'%} selected {% endif %}>TRIVANDRUM</option>
+        </select>
+        <label for="select"></label></td>
+    </tr>
+    <tr>
+      <td>PIN</td>
+      <td><label for="textfield3"></label>
+      <input type="text" pattern="[0-9]{6}" name="textfield2" id="textfield3" value="{{ loop1['c_pin']}}" class="form-control" /></td>
+    </tr>
+
+    <tr>
+      <td>Post</td>
+      <td><label for="textfield9"></label>
+      <input type="text" name="textfield8" id="textfield9"   value="{{ loop1['c_post']}}" class="form-control"/></td>
+    </tr>
+    <tr>
+      <td>Image</td>
+      <td><img src="{{ loop1['c_image']}}" alt="nophoto" height="100" width="100"/>
+          <label for="fileField"></label>
+      <input type="file" name="fileField" id="fileField"/></td>
+    </tr>
+    <tr>
+      <td>Qualification</td>
+      <td><label for="textfield8"></label>
+      <input type="text" name="textfield7" id="textfield8"  value="{{ loop1['c_qualification']}}" class="form-control"/></td>
+    </tr>
+    <tr>
+      <td>Phone no.</td>
+      <td><label for="textfield4"></label>
+      <input type="text" pattern="[0-9]{10}" name="textfield3" id="textfield4"  value="{{ loop1['c_phone']}}" class="form-control"/></td>
+    </tr>
+    <tr>
+      <td>Joining date</td>
+      <td><label for="textfield5"></label>
+      <input type="text" name="textfield4" id="textfield5"  value="{{ loop1['cjoining_date']}}"class="form-control"/></td>
+    </tr>
+    <tr>
+      <td>End date</td>
+      <td><label for="textfield6"></label>
+      <input type="text" name="textfield5" id="textfield6"  value="{{ loop1['cending_date']}}" class="form-control"/></td>
+    </tr>
+      <tr>
+      <td>department id</td>
+      <td><label for="textfield77"></label>
+      <input type="text" name="textfield20" id="textfield77"  value="{{ loop1['d_id']}}" class="form-control"/></td>
+    </tr>
+    <tr align="center">
+      <td colspan="2"> <input type="submit" name="button" id="button" value="update" class="btn btn-outline-primary"/></td>
+    </tr>
+  </table>
+  <label for="textfield7"></label>
+</form>
+</body>
+</html>
+{% endblock %}

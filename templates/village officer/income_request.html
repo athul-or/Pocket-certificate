@@ -1,0 +1,41 @@
+{% extends "village officer/index.html" %}
+{% block body %}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="200" border="1" class="table table-head-bg-primary table-hover">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">USER DETAILS</th>
+      <th scope="col">ADDRESS</th>
+      <th scope="col">SOURCE</th>
+      <th scope="col">AMOUNT</th>
+      <th scope="col">PROOF</th>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>&nbsp;{{ loop.index }}</td>
+      <td>&nbsp;Name: {{ i['u_name'] }}<br>Phone: {{ i['phoneno'] }}<br>Email: {{ i['email'] }}</td>
+      <td>&nbsp;House Name: {{ i['housename'] }}<br>Place: {{ i['place'] }}<br>Post: {{ i['post'] }}<br>Pin: {{ i['pin'] }}</td>
+      <td>{{ i['income_source'] }}</td>
+      <td>{{ i['amount'] }}&nbsp;</td>
+        <td><a href="/vview_proof/{{ i['inc_userid'] }}" class="btn btn-outline-info btn-sm">VIEW PROOF</a></td>
+
+      <td><p><a href="/income_approve/{{ i['inc_id'] }}" class="btn btn-outline-success btn-sm">Approve</a></p>
+      <p><a href="/income_reject/{{ i['inc_id'] }}" class="btn btn-outline-danger btn-sm">Reject</a></p></td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+</html>
+
+
+{% endblock %}

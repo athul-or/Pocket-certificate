@@ -1,0 +1,40 @@
+{% extends "user/index.html" %}
+{% block body %}
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="630" border="1" class="table table-head-bg-primary table-hover">
+    <tr>
+      <th width="11" scope="col">#</th>
+      <th width="106" scope="col">RELIGION</th>
+      <th width="69" scope="col">CASTE</th>
+      <th width="123" scope="col">CATEGORY</th>
+      <th width="90" scope="col">STATUS</th>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>{{ loop.index }}&nbsp;</td>
+      <td>&nbsp;&nbsp;{{ i['crelegion'] }}</td>
+        <td>&nbsp;{{ i['ccaste'] }}</td>
+          <td>&nbsp;{{ i['category'] }}</td>
+      <td>&nbsp;
+          {% if i['status']=='Approved' %}
+          <a href="/castecertificate/{{ i['ccid'] }}">View Certificate</a>
+          {% else %}
+          {{ i['status'] }}</td>
+    {% endif %}
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends "village officer/index.html" %}
+{% block body %}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="200" border="1" class="table table-head-bg-primary table-hover">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">HUSBAND DETAILS</th>
+      <th scope="col">WIFE DETAILS</th>
+      <th scope="col">DATE</th>
+      <th scope="col">LOCATION</th>
+           <th scope="col">STATUS</th>
+
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>{{ loop.index }}</td>
+        <td><b>Name</b>: {{ i['hn'] }}<br><b>DOB:</b>{{ i['hdob'] }}<br>District: {{ i['hd'] }}<br>Thaluk: {{ i['ht'] }}<br>Village: {{ i['hv'] }}</td>
+      <td>&nbsp;Name: {{ i['wn'] }}<br>DOB: {{ i['wdob'] }}<br>District: {{ i['wd'] }}<br>Thaluk: {{ i['wt'] }}<br>Village: {{ i['wv'] }}</td>
+      <td>{{ i['marriage_date'] }}&nbsp;</td>
+      <td>{{ i['mlocation'] }}&nbsp;</td>
+      <td>{{ i['status'] }}&nbsp;</td>
+
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+</html>
+
+{% endblock %}

@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+    <table height="600" align="center" style="background-image: url('/static/emblem1.png')">
+    <tr>
+      <th width="121" rowspan="2" scope="row">No:{{ n }}</th>
+      <td width="563" rowspan="2"></td>
+      <th height="31">Date: {{ d2 }}</th>
+    </tr>
+    <tr>
+      <th  width="190" height="62">Place: {{ a['place'] }}</th>
+    </tr>
+    <tr>
+      <th height="55" colspan="3" scope="row"><H2>INCOME CERTIFICATE</h2></th>
+    </tr>
+    <tr>
+        <th colspan="3" scope="row">This is to certify that Shri./Smt./.     {{ a['father_name'] }}     is Mother /Father /</th>
+    </tr>
+    <tr>
+      <th colspan="3" scope="row">Guardian of Shri./Smt.      {{ a['u_name'] }}      is resident of Village/Town      {{ a['village'] }}     </th>
+    </tr>
+    <tr>
+      <th colspan="3" scope="row">District/Division      {{ a['district'] }}     of Kerala State</th>
+    </tr>
+    <tr>
+      <th colspan="3" scope="row">As per the declaration / records, his/ her annual income for the financial year 20 - from</th>
+    </tr>
+    <tr>
+      <th height="41" colspan="3" scope="row">the source     {{ a['income_source'] }}     is Rs.    {{ a['amount'] }}</th>
+    </tr>
+  </table>
+</form>
+</body>
+</html>

@@ -1,0 +1,49 @@
+{% extends "admin/index.html" %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="714" border="1" class="table table-head-bg-primary table-hover">
+    <tr>
+      <td width="12">#</td>
+      <td width="53">Name</td>
+      <td width="50">Place</td>
+      <td width="69">District</td>
+      <td width="30">Pin</td>
+      <td width="35">Post</td>
+      <td width="53">Image</td>
+      <td width="75">Qualification</td>
+      <td width="66">Phone no.</td>
+      <td width="62">Joining date</td>
+      <td width="37">End Date</td>
+      <td width="38">&nbsp;</td>
+      <td width="52">&nbsp;</td>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>{{loop.index}}</td>
+      <td>{{ i['v_name'] }}</td>
+      <td>&nbsp;{{ i['v_place'] }}</td>
+      <td>{{ i['v_district'] }}</td>
+      <td>{{ i['v_pin'] }}</td>
+      <td>{{ i['v_post'] }}</td>
+      <td>&nbsp;<img src="{{ i['v_image'] }}" width="100" height="100"> </td>
+      <td>&nbsp;{{ i['v_qualification'] }}</td>
+      <td>{{ i['v_phone'] }}</td>
+      <td>{{ i['joining_date'] }}
+        <td>{{ i['end_date'] }}</td>
+        <td><a href="/update_village/{{ i['login_id'] }}" class="btn btn-outline-success btn-sm">Edit</a><br><br>
+      <a href="/delete_village/{{ i['login_id'] }}" class="btn btn-outline-danger btn-sm">Delete</a></td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+</html>
+{% endblock %}

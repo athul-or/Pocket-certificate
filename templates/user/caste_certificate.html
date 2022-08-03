@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+{#    <style>#}
+{#div {#}
+{#  background-image: url('/static/emblem.jpg');#}
+{#}#}
+{#</style>#}
+</head>
+<body>
+<form id="form1" name="form1" method="post" action="">
+<table height="600" align="center" style="background-image: url('/static/emblem1.png')">
+    <tr >
+      <th width="79" rowspan="2" scope="row">No.</th>
+      <th width="444" rowspan="2" scope="row">{{ n }}</th>
+      <th width="321" height="24" scope="row">Date: {{ d2 }}</th>
+    </tr>
+    <tr>
+      <th height="25" scope="row">Place: {{ a['place'] }}</th>
+    </tr>
+    <tr>
+      <th height="51" colspan="4" scope="row"><H2>CASTE CERTIFICATE</H2></th>
+    </tr>
+    <tr>
+      <th height="58" colspan="4" scope="row">This is to certify that Mr./Miss./Mrs.      {{ a['u_name'] }}</th>
+    </tr>
+    <tr>
+      <th height="59" colspan="4" scope="row">Son/Daughter of.       {{ a['father_name'] }}</th>
+    </tr>
+    <tr>
+      <th height="79" colspan="4" scope="row">Village/Town of.       {{ a['village'] }}</th>
+    </tr>
+    <tr>
+      <th height="79" colspan="4" scope="row">Of the State.    Kerala </th>
+    </tr>
+    <tr>
+      <th height="79" colspan="4" scope="row">belongs to.     {{ a['crelegion'] }} , {{ a['ccaste'] }}</th>
+    </tr>
+  </table>
+</form>
+</body>
+</html>
